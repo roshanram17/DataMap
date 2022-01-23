@@ -60,5 +60,14 @@ print(dataFrame)
 
 #CSV Read
 
+age_cat = {"19 and Younger":"Under 19","20 to 29 Years":"Young Adult","30 to 39 Years":"Adults","40 to 49 Years":"Adult","50 to 59 Years":"Adult","60 to 69 Years":"Senior","70 to 79 Years":"Senior","80 to 89 Years":"Senior"}
+postal_loc = {"M2N":}
+
+print("------------CSV Testing---------")
 covid_cases = pd.read_csv("/Users/roshanram/Documents/DataMap/DataMap/e5bf35bc-e681-43da-b2ce-0242d00922ad.csv", header=None,low_memory=False,usecols=[3,4,5])[[3,4,5]]
+covid_cases.dropna()
 print(covid_cases)
+covid_cases.insert(3,"Latitude","Fill In")
+covid_cases.insert(4,"Longitude","Fill In")
+covid_cases.replace(value=None, to_replace=age_cat,inplace=True)
+st.write(covid_cases)
